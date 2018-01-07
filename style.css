@@ -1,0 +1,67 @@
+/*GLOBAL STYLING*/
+html, body {
+  background-color: #ffeead;
+  margin: 10px;
+  }
+
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #ffeead;
+}
+
+.container > div:nth-child(1n) {
+background-color: #96ceb4;	
+}
+
+.container > div:nth-child(3n) {
+background-color: #88d8b0;
+}
+
+.container > div:nth-child(2n) {
+  background-color: #ff6f69;
+}
+
+.container > div:nth-child(4n) {
+    background-color: #ffcc5c;
+}
+
+/*=== Basic Grid ===*/
+.container1 {
+  display: grid;
+  /* width and number of columns */
+  grid-template-columns: 100px auto 100px;
+  /* height and number of rows */
+  grid-template-rows: 50px 50px 50px;
+  /*gutter space between each block*/
+  grid-gap: 3px;
+}
+
+/*=== Fraction Units and Repeats ===*/
+.container2 {
+  display: grid;
+  grid-gap: 3px;
+  /* fr = fraction unit - equal units */
+  grid-template-columns: 1fr 1fr 1fr;
+  /*repeat([number of columns/rows], [fraction unit]*/
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 50px);
+  /*Shorthand Notation - Rows / Columns */
+  grid-template: repeat(2, 50px) / repeat(3, 1fr);
+}
+
+/*=== Positioning Items ===*/
+.container3 {
+  display: grid;
+  grid-gap: 3px;
+  /* fr = fraction unit - equal units */
+  grid-template-columns: 1fr 1fr 1fr;
+  /*repeat([number of columns/rows], [fraction unit]*/
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 50px);
+  /*Shorthand Notation - Rows / Columns */
+  grid-template: repeat(2, 50px) / repeat(3, 1fr);
+}
+
