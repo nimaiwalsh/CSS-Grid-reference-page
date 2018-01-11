@@ -1,0 +1,25 @@
+/*=== TEMPLATE AREAS === */
+.image-grid > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-grid {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 115px;
+  /*Used to fill smaller items into to blank spaces in the grid*/
+  grid-auto-flow: dense;
+}
+.horizontal {
+  grid-column: span 2;
+}
+.vertical {
+  grid-row: span 2;
+}
+.big {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+

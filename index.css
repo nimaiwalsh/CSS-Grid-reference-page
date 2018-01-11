@@ -1,0 +1,57 @@
+/*=== Basic Grid ===*/
+.container1 {
+  display: grid;
+  /* width and number of columns */
+  grid-template-columns: 100px auto 100px;
+  /* height and number of rows */
+  grid-template-rows: 50px 50px 50px;
+  /*gutter space between each block*/
+  grid-gap: 3px;
+}
+
+/*=== Fraction Units and Repeats ===*/
+.container2 {
+  display: grid;
+  grid-gap: 3px;
+  /* fr = fraction unit - equal units */
+  grid-template-columns: 1fr 1fr 1fr;
+  /*repeat([number of columns/rows], [fraction unit]*/
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 50px);
+  /*Shorthand Notation - Rows / Columns */
+  grid-template: repeat(2, 50px) / repeat(3, 1fr);
+}
+
+/*=== POSITIONING ITEMS ===*/
+.container3 {
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px 200px 50px; 
+}
+
+.header3 {
+/* Specify div to Start at first column line and end at the last column */
+  grid-column: 2 / -1;
+}
+.menu3 {
+  grid-row: 1 / 3;
+}
+.content3 {
+  grid-column: 2 / -1;
+}
+.footer3 {
+  grid-column: 1 / -1;
+}
+
+/*=== AUTO-FIT, MINMAX and IMPLICIT ROWS  ===*/
+.container-auto-fit {
+  display: grid;
+  grid-gap: 3px;
+  /*Make the column fit evenly across the page each with a minimum of 100px
+  but stretches to fill space.*/
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  /*Implicit rows - when the size is shrunk, more rows are created - we need to
+  keep the same row hight regardless of the number of rows created*/
+  grid-auto-rows: 100px;
+}
